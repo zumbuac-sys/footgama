@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOOTGAMA - Football & Gaming</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#0b1020;color:white}
+header{text-align:center;padding:30px 15px;background:#111936}
+header h1{font-size:38px;letter-spacing:2px;color:#20e070}
+header p{margin-top:8px;color:#b9c2d8}
+nav{display:flex;gap:8px;padding:12px;background:#151f3d;overflow-x:auto}
+nav a{color:white;text-decoration:none;background:#202d52;padding:10px 14px;border-radius:20px;white-space:nowrap}
+main{padding:20px}
+section{margin-bottom:30px}
+h2{margin-bottom:15px;font-size:25px}
+section div{background:#151f3d;padding:18px;margin-bottom:12px;border-radius:15px;border:1px solid #29385f}
+h3{margin-bottom:8px}
+section p{color:#b9c2d8;line-height:1.5}
+#quiz{text-align:center;background:#18264a;padding:25px;border-radius:18px}
+button{display:block;width:100%;margin:10px 0;padding:12px;border:none;border-radius:10px;background:#20e070;color:#07110b;font-weight:bold}
+footer{text-align:center;padding:25px;background:#080d1b;color:#8993aa;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>FOOTGAMA</h1>
+<p>⚽ Football • 🎮 Gaming • 🔥 Passion</p>
+</header>
+<nav>
+<a href="#football">⚽ Football</a>
+<a href="#gaming">🎮 Gaming</a>
+<a href="#quiz">🧠 Quiz</a>
+</nav>
+<main>
+<section id="football">
+<h2>⚽ Football</h2>
+<div><h3>📰 Actualités</h3><p>Les dernières actualités du monde du football.</p></div>
+<div><h3>🏆 Compétitions</h3><p>Résultats, classements et grandes compétitions.</p></div>
+<div><h3>👑 Les joueurs</h3><p>Les stars et les jeunes talents du football.</p></div>
+</section>
+<section id="gaming">
+<h2>🎮 Gaming</h2>
+<div><h3>⚽🎮 EA Sports FC</h3><p>Actualités et nouveautés du jeu.</p></div>
+<div><h3>🎮 eFootball</h3><p>Les nouveautés et actualités du jeu.</p></div>
+<div><h3>🔥 Tendances Gaming</h3><p>Les jeux dont tout le monde parle.</p></div>
+</section>
+<section id="quiz">
+<h2>🧠 FOOTGAMA QUIZ</h2>
+<p>Teste tes connaissances sur le football.</p>
+</section>
+</main>
+<footer>© 2026 FOOTGAMA — Football • Gaming • Passion</footer>
+<script>
+const questions=[
+{question:"Quel pays a remporté la Coupe du monde 2022 ?",answers:["France","Argentine","Brésil","Espagne"],correct:"Argentine"},
+{question:"Combien de joueurs une équipe aligne-t-elle au coup d'envoi ?",answers:["9","10","11","12"],correct:"11"},
+{question:"Quel club joue au Santiago Bernabéu ?",answers:["FC Barcelone","Real Madrid","Liverpool","Milan AC"],correct:"Real Madrid"}
+];
+let currentQuestion=0,score=0;
+function showQuestion(){
+const quiz=document.querySelector("#quiz"),q=questions[currentQuestion];
+quiz.innerHTML=`<h2>🧠 FOOTGAMA QUIZ</h2><p>Question ${currentQuestion+1} / ${questions.length}</p><h3>${q.question}</h3><div>${q.answers.map(a=>`<button onclick="checkAnswer('${a}')">${a}</button>`).join("")}</div><p id="result"></p>`;
+}
+function checkAnswer(answer){
+const result=document.querySelector("#result");
+if(answer===questions[currentQuestion].correct){score++;result.textContent="✅ Bonne réponse !"}else{result.textContent="❌ Mauvaise réponse. La bonne réponse était : "+questions[currentQuestion].correct}
+setTimeout(nextQuestion,1000);
+}
+function nextQuestion(){currentQuestion++;if(currentQuestion<questions.length)showQuestion();else showScore()}
+function showScore(){document.querySelector("#quiz").innerHTML=`<h2>🏆 Quiz terminé !</h2><p>Ton score : <strong>${score} / ${questions.length}</strong></p><button onclick="restartQuiz()">🔄 Rejouer</button>`}
+function restartQuiz(){currentQuestion=0;score=0;showQuestion()}
+showQuestion();
+</script>
+</body>
+</html>
