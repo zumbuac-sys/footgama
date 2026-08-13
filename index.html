@@ -3,75 +3,536 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOOTGAMA - Football & Gaming</title>
+
+<title>FOOTGAMA | Football & Gaming</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#0b1020;color:white}
-header{text-align:center;padding:30px 15px;background:#111936}
-header h1{font-size:38px;letter-spacing:2px;color:#20e070}
-header p{margin-top:8px;color:#b9c2d8}
-nav{display:flex;gap:8px;padding:12px;background:#151f3d;overflow-x:auto}
-nav a{color:white;text-decoration:none;background:#202d52;padding:10px 14px;border-radius:20px;white-space:nowrap}
-main{padding:20px}
-section{margin-bottom:30px}
-h2{margin-bottom:15px;font-size:25px}
-section div{background:#151f3d;padding:18px;margin-bottom:12px;border-radius:15px;border:1px solid #29385f}
-h3{margin-bottom:8px}
-section p{color:#b9c2d8;line-height:1.5}
-#quiz{text-align:center;background:#18264a;padding:25px;border-radius:18px}
-button{display:block;width:100%;margin:10px 0;padding:12px;border:none;border-radius:10px;background:#20e070;color:#07110b;font-weight:bold}
-footer{text-align:center;padding:25px;background:#080d1b;color:#8993aa;font-size:13px}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#080d1d;
+  color:white;
+}
+
+header{
+  text-align:center;
+  padding:38px 15px;
+  background:#111b40;
+}
+
+header h1{
+  font-size:42px;
+  color:#20e878;
+  letter-spacing:2px;
+}
+
+header p{
+  margin-top:10px;
+  font-size:19px;
+  color:#d5d9e8;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  padding:12px;
+  background:#101936;
+}
+
+nav a{
+  text-decoration:none;
+  color:white;
+  background:#1b2b5c;
+  padding:11px 15px;
+  border-radius:25px;
+  font-size:15px;
+}
+
+nav a:hover{
+  background:#20e878;
+  color:#07101a;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:25px 15px;
+}
+
+section{
+  margin-bottom:45px;
+}
+
+h2{
+  font-size:30px;
+  margin-bottom:18px;
+}
+
+.card{
+  background:#151f3d;
+  border:1px solid #293b70;
+  border-radius:20px;
+  padding:22px;
+  margin:15px 0;
+}
+
+.card h3{
+  font-size:21px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#cbd1e3;
+  font-size:17px;
+  line-height:1.6;
+}
+
+.tag{
+  display:inline-block;
+  margin-bottom:10px;
+  padding:6px 10px;
+  border-radius:15px;
+  background:#20366b;
+  font-size:13px;
+}
+
+.search{
+  margin:20px 0;
+}
+
+.search input{
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:12px;
+  background:#151f3d;
+  color:white;
+  font-size:16px;
+  outline:none;
+}
+
+.button{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 20px;
+  background:#20e878;
+  color:#07101a;
+  border:0;
+  border-radius:12px;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.quiz{
+  text-align:center;
+}
+
+#question{
+  font-size:21px;
+  margin-bottom:20px;
+}
+
+.answer{
+  display:block;
+  width:100%;
+  margin:10px 0;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  background:#263866;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.answer:hover{
+  background:#20e878;
+  color:#07101a;
+}
+
+#result{
+  margin-top:20px;
+  font-size:19px;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:30px 15px;
+  background:#11172d;
+  color:#aeb5ca;
+}
+
+.hidden{
+  display:none;
+}
+
+@media(max-width:500px){
+
+  header h1{
+    font-size:36px;
+  }
+
+  header p{
+    font-size:17px;
+  }
+
+  h2{
+    font-size:27px;
+  }
+
+  .card{
+    padding:19px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<h1>FOOTGAMA</h1>
-<p>⚽ Football • 🎮 Gaming • 🔥 Passion</p>
+  <h1>FOOTGAMA</h1>
+  <p>⚽ Football • 🎮 Gaming • 🔥 Passion</p>
 </header>
+
 <nav>
-<a href="#football">⚽ Football</a>
-<a href="#gaming">🎮 Gaming</a>
-<a href="#quiz">🧠 Quiz</a>
+  <a href="#football">⚽ Football</a>
+  <a href="#actualites">📰 Actualités</a>
+  <a href="#matchs">🔥 Matchs</a>
+  <a href="#gaming">🎮 Gaming</a>
+  <a href="#quiz">🧠 Quiz</a>
 </nav>
+
 <main>
+
+<div class="search">
+  <input
+    type="text"
+    id="search"
+    placeholder="🔎 Rechercher sur FOOTGAMA..."
+    onkeyup="searchContent()"
+  >
+</div>
+
+
 <section id="football">
+
 <h2>⚽ Football</h2>
-<div><h3>📰 Actualités</h3><p>Les dernières actualités du monde du football.</p></div>
-<div><h3>🏆 Compétitions</h3><p>Résultats, classements et grandes compétitions.</p></div>
-<div><h3>👑 Les joueurs</h3><p>Les stars et les jeunes talents du football.</p></div>
+
+<div class="card searchable">
+<span class="tag">Football</span>
+<h3>📰 Le monde du football</h3>
+<p>
+Bienvenue sur FOOTGAMA, ton espace consacré au
+football, aux compétitions, aux joueurs et aux
+grands moments du sport.
+</p>
+</div>
+
+<div class="card searchable">
+<span class="tag">Compétitions</span>
+<h3>🏆 Grandes compétitions</h3>
+<p>
+Suis les grandes compétitions et découvre les équipes
+qui se battent pour les trophées.
+</p>
+</div>
+
+<div class="card searchable">
+<span class="tag">Joueurs</span>
+<h3>👑 Les joueurs à suivre</h3>
+<p>
+Découvre les stars du football ainsi que les jeunes
+talents qui pourraient devenir les prochaines grandes
+figures du sport.
+</p>
+</div>
+
 </section>
+
+
+<section id="actualites">
+
+<h2>📰 Actualités</h2>
+
+<div class="card searchable">
+<span class="tag">ACTU</span>
+<h3>🔥 Les dernières informations</h3>
+<p>
+FOOTGAMA te permet de retrouver les principales
+informations et analyses autour du football.
+</p>
+</div>
+
+<div class="card searchable">
+<span class="tag">ANALYSE</span>
+<h3>📊 Analyse des équipes</h3>
+<p>
+Compare les performances des équipes et découvre
+leurs forces et leurs points faibles.
+</p>
+</div>
+
+<div class="card searchable">
+<span class="tag">TRANSFERT</span>
+<h3>🔄 Mercato</h3>
+<p>
+Les transferts et les rumeurs font partie des sujets
+les plus suivis par les passionnés de football.
+</p>
+</div>
+
+</section>
+
+
+<section id="matchs">
+
+<h2>🔥 Matchs à suivre</h2>
+
+<div class="card searchable">
+<h3>⚽ Les grandes affiches</h3>
+<p>
+Retrouve ici les matchs importants et les affiches
+que les passionnés ne veulent pas manquer.
+</p>
+</div>
+
+<div class="card searchable">
+<h3>🏆 Résultats & classements</h3>
+<p>
+Une future section permettra de consulter les résultats
+et les classements des compétitions.
+</p>
+</div>
+
+</section>
+
+
 <section id="gaming">
+
 <h2>🎮 Gaming</h2>
-<div><h3>⚽🎮 EA Sports FC</h3><p>Actualités et nouveautés du jeu.</p></div>
-<div><h3>🎮 eFootball</h3><p>Les nouveautés et actualités du jeu.</p></div>
-<div><h3>🔥 Tendances Gaming</h3><p>Les jeux dont tout le monde parle.</p></div>
+
+<div class="card searchable">
+<span class="tag">GAMING</span>
+<h3>🎮 Jeux populaires</h3>
+<p>
+Découvre les jeux populaires et les tendances du
+moment dans l'univers gaming.
+</p>
+</div>
+
+<div class="card searchable">
+<span class="tag">CONSEILS</span>
+<h3>🎯 Conseils Gaming</h3>
+<p>
+Astuces, conseils et découvertes pour améliorer ton
+expérience de jeu.
+</p>
+</div>
+
+<div class="card searchable">
+<span class="tag">FOOTBALL GAMING</span>
+<h3>⚽🎮 Football & jeux vidéo</h3>
+<p>
+Retrouve l'univers du football directement dans
+les jeux vidéo.
+</p>
+</div>
+
 </section>
+
+
 <section id="quiz">
-<h2>🧠 FOOTGAMA QUIZ</h2>
-<p>Teste tes connaissances sur le football.</p>
+
+<h2>🧠 Quiz Football</h2>
+
+<div class="card quiz">
+
+<p id="question">Question</p>
+
+<div id="answers"></div>
+
+<p id="result"></p>
+
+<button class="button" onclick="nextQuestion()">
+Question suivante
+</button>
+
+</div>
+
 </section>
+
 </main>
-<footer>© 2026 FOOTGAMA — Football • Gaming • Passion</footer>
+
+
+<footer>
+
+<p>© 2026 FOOTGAMA</p>
+<p>⚽ Football • 🎮 Gaming • 🔥 Passion</p>
+
+</footer>
+
+
 <script>
-const questions=[
-{question:"Quel pays a remporté la Coupe du monde 2022 ?",answers:["France","Argentine","Brésil","Espagne"],correct:"Argentine"},
-{question:"Combien de joueurs une équipe aligne-t-elle au coup d'envoi ?",answers:["9","10","11","12"],correct:"11"},
-{question:"Quel club joue au Santiago Bernabéu ?",answers:["FC Barcelone","Real Madrid","Liverpool","Milan AC"],correct:"Real Madrid"}
+
+const questions = [
+
+{
+question:"Combien de joueurs une équipe de football aligne-t-elle normalement sur le terrain ?",
+answers:["7","9","11","15"],
+correct:"11"
+},
+
+{
+question:"Quel objet utilise-t-on principalement pour jouer au football ?",
+answers:["Une raquette","Un ballon","Une batte","Un volant"],
+correct:"Un ballon"
+},
+
+{
+question:"Quelle section de FOOTGAMA contient les jeux vidéo ?",
+answers:["Football","Gaming","Actualités","Compétitions"],
+correct:"Gaming"
+},
+
+{
+question:"Quel est le but principal d'un match de football ?",
+answers:["Marquer des buts","Faire des passes uniquement","Courir plus vite","Avoir le plus de corners"],
+correct:"Marquer des buts"
+},
+
+{
+question:"Quelle section de FOOTGAMA propose des questions aux visiteurs ?",
+answers:["Gaming","Quiz","Mercato","Joueurs"],
+correct:"Quiz"
+}
+
 ];
-let currentQuestion=0,score=0;
-function showQuestion(){
-const quiz=document.querySelector("#quiz"),q=questions[currentQuestion];
-quiz.innerHTML=`<h2>🧠 FOOTGAMA QUIZ</h2><p>Question ${currentQuestion+1} / ${questions.length}</p><h3>${q.question}</h3><div>${q.answers.map(a=>`<button onclick="checkAnswer('${a}')">${a}</button>`).join("")}</div><p id="result"></p>`;
+
+let currentQuestion=0;
+let score=0;
+
+function loadQuestion(){
+
+const q=questions[currentQuestion];
+
+document.getElementById("question").textContent=q.question;
+
+const answersDiv=document.getElementById("answers");
+
+answersDiv.innerHTML="";
+
+document.getElementById("result").textContent="";
+
+q.answers.forEach(answer=>{
+
+const button=document.createElement("button");
+
+button.textContent=answer;
+
+button.className="answer";
+
+button.onclick=function(){
+
+document.querySelectorAll(".answer")
+.forEach(btn=>btn.disabled=true);
+
+if(answer===q.correct){
+
+score++;
+
+document.getElementById("result").textContent=
+"✅ Bonne réponse !";
+
+}else{
+
+document.getElementById("result").textContent=
+"❌ Mauvaise réponse.";
+
 }
-function checkAnswer(answer){
-const result=document.querySelector("#result");
-if(answer===questions[currentQuestion].correct){score++;result.textContent="✅ Bonne réponse !"}else{result.textContent="❌ Mauvaise réponse. La bonne réponse était : "+questions[currentQuestion].correct}
-setTimeout(nextQuestion,1000);
+
+};
+
+answersDiv.appendChild(button);
+
+});
+
 }
-function nextQuestion(){currentQuestion++;if(currentQuestion<questions.length)showQuestion();else showScore()}
-function showScore(){document.querySelector("#quiz").innerHTML=`<h2>🏆 Quiz terminé !</h2><p>Ton score : <strong>${score} / ${questions.length}</strong></p><button onclick="restartQuiz()">🔄 Rejouer</button>`}
-function restartQuiz(){currentQuestion=0;score=0;showQuestion()}
-showQuestion();
+
+
+function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion>=questions.length){
+
+document.getElementById("question").textContent=
+"🎉 Quiz terminé !";
+
+document.getElementById("answers").innerHTML="";
+
+document.getElementById("result").textContent=
+"Ton score : "+score+" / "+questions.length;
+
+currentQuestion=0;
+score=0;
+
+return;
+
+}
+
+loadQuestion();
+
+}
+
+
+function searchContent(){
+
+const search=
+document.getElementById("search")
+.value
+.toLowerCase();
+
+const cards=
+document.querySelectorAll(".searchable");
+
+cards.forEach(card=>{
+
+const text=card.textContent.toLowerCase();
+
+if(text.includes(search)){
+
+card.classList.remove("hidden");
+
+}else{
+
+card.classList.add("hidden");
+
+}
+
+});
+
+}
+
+
+loadQuestion();
+
 </script>
+
 </body>
 </html>
